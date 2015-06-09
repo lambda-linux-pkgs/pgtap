@@ -1,3 +1,5 @@
+%define _buildid .1
+
 %global pg92nvr pgtap92-%{version}-%{release}
 %global pg92builddir %{_builddir}/%{pg92nvr}
 
@@ -7,7 +9,7 @@
 Summary:	Unit testing suite for PostgreSQL
 Name:		pgtap
 Version:	0.95.0
-Release:	1%{?dist}
+Release:	1%{?_buildid}%{?dist}
 Group:		Applications/Databases
 License:	PostgreSQL
 URL:		http://pgtap.org/
