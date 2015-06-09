@@ -1,0 +1,24 @@
+From 2e185aeb20a59caca90bb6e21f0956336f34ce33 Mon Sep 17 00:00:00 2001
+From: Rajiv M Ranganath <rajiv.ranganath@atihita.com>
+Date: Tue, 9 Jun 2015 21:57:50 +0000
+Subject: [PATCH] Remove default definition of `PG_CONFIG`
+
+---
+ Makefile | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/Makefile b/Makefile
+index d0c5cb5..9f3b95d 100644
+--- a/Makefile
++++ b/Makefile
+@@ -9,7 +9,6 @@ EXTRA_CLEAN  = sql/pgtap.sql sql/uninstall_pgtap.sql sql/pgtap-core.sql sql/pgta
+ DOCS         = doc/pgtap.mmd
+ REGRESS      = $(patsubst test/sql/%.sql,%,$(TESTS))
+ REGRESS_OPTS = --inputdir=test --load-language=plpgsql
+-PG_CONFIG   ?= pg_config
+ 
+ ifdef NO_PGXS
+ top_builddir = ../..
+-- 
+2.1.0
+
