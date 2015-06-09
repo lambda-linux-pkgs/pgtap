@@ -20,6 +20,9 @@ BuildRequires:  perl-TAP-Parser-SourceHandler-pgTAP >= 3.30
 Patch1001: 1001-Remove-default-definition-of-PG_CONFIG.patch
  
 %description
+For package support, please visit
+https://github.com/lambda-linux-pkgs/%{name}/issues
+
 pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
 PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
 functions, as well as the ability to integrate with other TAP-emitting test
@@ -32,6 +35,9 @@ Requires:       perl-TAP-Parser-SourceHandler-pgTAP >= 3.30
 BuildRequires:  postgresql92-devel
 
 %description -n pgtap92
+For package support, please visit
+https://github.com/lambda-linux-pkgs/%{name}/issues
+
 pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
 PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
 functions, as well as the ability to integrate with other TAP-emitting test
@@ -46,6 +52,9 @@ Requires:       perl-TAP-Parser-SourceHandler-pgTAP >= 3.30
 BuildRequires:  postgresql93-devel
 
 %description -n pgtap93
+For package support, please visit
+https://github.com/lambda-linux-pkgs/%{name}/issues
+
 pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
 PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
 functions, as well as the ability to integrate with other TAP-emitting test
