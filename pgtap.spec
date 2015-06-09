@@ -112,6 +112,14 @@ popd
 %{_defaultdocdir}/pgsql/extension/pgtap.mmd
 
 %changelog
+* Tue Jun 09 2015 Rajiv M Ranganath <rajiv.ranganath@atihita.com> 0.95.0-1
+- Adapt for AL/LL
+- Add package support URL
+- Update spec file for AL/LL
+- Add `1001-Remove-default-definition-of-PG_CONFIG.patch`
+- Import `pgtap-0.95.0.zip`
+- Import spec file
+
 * Mon Jan 28 2013 David Wheeler <david@justatheory.com> 0.93.0
 - Upgraded to pgTAP 0.93.0
 
