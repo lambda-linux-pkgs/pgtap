@@ -149,6 +149,9 @@ popd
 %{_defaultdocdir}/pgsql/extension/pgtap.mmd
 
 %changelog
+* Wed May 11 2016 Rajiv M Ranganath <rajiv.ranganath@atihita.com> - 0.95.0-1
+- Add PostgreSQL 9.4 support
+
 * Tue Jun 09 2015 Rajiv M Ranganath <rajiv.ranganath@atihita.com> 0.95.0-1
 - Adapt for AL/LL
 - Add package support URL
