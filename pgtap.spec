@@ -1,4 +1,4 @@
-%define _buildid .1
+%define _buildid .2
 
 %global pg92nvr pgtap92-%{version}-%{release}
 %global pg92builddir %{_builddir}/%{pg92nvr}
