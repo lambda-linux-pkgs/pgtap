@@ -6,6 +6,9 @@
 %global pg93nvr pgtap93-%{version}-%{release}
 %global pg93builddir %{_builddir}/%{pg93nvr}
 
+%global pg94nvr pgtap94-%{version}-%{release}
+%global pg94builddir %{_builddir}/%{pg94nvr}
+
 Summary:	Unit testing suite for PostgreSQL
 Name:		pgtap
 Version:	0.95.0
@@ -20,7 +23,7 @@ BuildRequires:  perl-TAP-Parser-SourceHandler-pgTAP >= 3.30
 
 # Lambda Linux patches
 Patch1001: 1001-Remove-default-definition-of-PG_CONFIG.patch
- 
+
 %description
 For package support, please visit
 https://github.com/lambda-linux-pkgs/%{name}/issues
@@ -63,7 +66,24 @@ functions, as well as the ability to integrate with other TAP-emitting test
 frameworks. It can also be used in the xUnit testing style.
 
 This package is meant to be used with PostgreSQL 9.3
- 
+
+%package -n pgtap94
+Summary:	Unit testing suite for PostgreSQL
+Requires:       postgresql94-server, perl-Test-Harness >= 3.0
+Requires:       perl-TAP-Parser-SourceHandler-pgTAP >= 3.30
+BuildRequires:  postgresql94-devel
+
+%description -n pgtap94
+For package support, please visit
+https://github.com/lambda-linux-pkgs/%{name}/issues
+
+pgTAP is a unit testing framework for PostgreSQL written in PL/pgSQL and
+PL/SQL. It includes a comprehensive collection of TAP-emitting assertion
+functions, as well as the ability to integrate with other TAP-emitting test
+frameworks. It can also be used in the xUnit testing style.
+
+This package is meant to be used with PostgreSQL 9.4
+
 %prep
 %setup -q
 
@@ -85,6 +105,13 @@ pushd %{pg93builddir}
 env PG_CONFIG=/usr/bin/pg_config93 make
 popd
 
+rm -rf %{pg94builddir}
+mkdir -p %{pg94builddir}
+cp -a * %{pg94builddir}
+pushd %{pg94builddir}
+env PG_CONFIG=/usr/bin/pg_config94 make
+popd
+
 %install
 %{__rm} -rf %{buildroot}
 
@@ -96,10 +123,15 @@ pushd %{pg93builddir}
 env PG_CONFIG=/usr/bin/pg_config93 make install DESTDIR=%{buildroot}
 popd
 
+pushd %{pg94builddir}
+env PG_CONFIG=/usr/bin/pg_config94 make install DESTDIR=%{buildroot}
+popd
+
 %clean
 %{__rm} -rf %{buildroot}
 %{__rm} -rf %{pg92builddir}
 %{__rm} -rf %{pg93builddir}
+%{__rm} -rf %{pg94builddir}
 
 %files -n pgtap92
 %defattr(-,root,root,-)
@@ -109,6 +141,11 @@ popd
 %files -n pgtap93
 %defattr(-,root,root,-)
 %{_datadir}/pgsql93/extension/pgtap*
+%{_defaultdocdir}/pgsql/extension/pgtap.mmd
+
+%files -n pgtap94
+%defattr(-,root,root,-)
+%{_datadir}/pgsql94/extension/pgtap*
 %{_defaultdocdir}/pgsql/extension/pgtap.mmd
 
 %changelog
